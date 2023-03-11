@@ -41,22 +41,3 @@ SOLUTION(CSES::Repetitions) {
 	}
 	return std::cout << l << '\n';
 }
-
-SOLUTION(CSES::Stick_Lengths) {
-	N c, x = 0;
-	std::cin >> c;
-	N arr[c];
-	N m = 0, i = 0;
-	for (; i < c; ++i) {
-		std::cin >> arr[i];
-		m += arr[i];
-	}
-	m = round(static_cast<R64>(m) / c);
-	for (N const& i : arr) {
-		if (i > m)
-			x += i - m;
-		else if (i < m)
-			x += m - i;
-	}
-	return std::cout << x;
-}
